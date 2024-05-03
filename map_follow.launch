@@ -1,0 +1,15 @@
+<launch>
+    <!-- Launch the map server -->
+    <include file="$(find maxROStappen)/src/launch/load_map.launch"/>
+    <!-- Rally car Hardware -->
+    <include file="$(find rallycar)/launch/rallycar_hardware.launch"/>
+    <!--node pkg="tf" type="static_transform_publisher" name="map_to_laser_tf_publisher" args="0 0 0 0 0 0 map laser 100"/--> 
+
+    <!-- load the amcl launch files.-->
+    <include file="$(find maxROStappen)/src/launch/amcl.launch"/>
+    
+    <!--we manually launch map_follower.py so that we have better controll of localization-->
+
+    <!-- Visualize in RViz -->
+    <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find maxROStappen)/config/my_rviz_config.rviz"-->
+</launch>
