@@ -5,11 +5,14 @@ import tf
 import math
 from geometry_msgs.msg import PoseStamped, Point
 from visualization_msgs.msg import Marker, MarkerArray
+#imports
 
 # Use absolute path and expand the user's home directory
 FILEPATH = os.path.expanduser('~/rallycar_ws/src/maxROStappen/src/scripts/knoy_FinalMap.txt')
 
+#waypoint object
 class waypoint(object):
+    #init method
     def __init__(self):
         self.marker_id = 1
         rospy.init_node('echoer')
