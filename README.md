@@ -43,6 +43,7 @@ The accelarator command is also derived this way however, instead of a theta err
 This is the esence of our PD controller. The entire loop is run again 10 times a second, allowing us to get very detailed control of the car. 
 
 Graph of the throttle map:
+
 ![image](https://github.com/NarenR21/442Team1/assets/42756261/5da75789-f8e9-4232-b39c-f7dd588460c7)
 
 
