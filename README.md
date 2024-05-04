@@ -23,6 +23,8 @@ drift_error = arctan((Yd - y) / (Xd- x)) - desired_theta
 
 steering_error = drift_error - yaw_error
 
+
+
 Software Description and Explanation:
 
 Launch Files:
@@ -34,6 +36,8 @@ Waypoint.py
 Once all of the launch files have successfully initialized every node, the car knows it position in the map.  Now it needs to determine where to go.  To achieve this we use a waypoint system.  We desgined a python script that would record x_position, y_position and angle of points in the map.  When using RViz the user can place waypoints on the map and the python script will publish them and save them to a file.  This can be seen in assignment two.  In assignment two the team needed to develop a series of waypoints that are connected together.  Once the team developed the series of waypoints this file could be use later to run waypoint following.
 
 map_follower.py
+The main script used to run the autonomous algorithem was map_follower.py. As the name suggests, map_follower.py takes a text file of waypoints and outputs steering and accelerator commands to control the motion of the car. Our first challange was to establish the location of the car in the map space. This was done through Adaptive Monte Carlo Localization, or amcl. This subroutine utilizes the onboard LIDAR to get a scan of the area around it. This is then run through a monte carlo analysis which is based upon the mean, standard deviation, and other such stastical factors to determine the most likly location and orientation. with this information, we're able to understand where in the map space the car is. Now, we need to decide where the car should be. The waypoint described in waypoints.py are in the textfile that is fed to the map_follower. With this information, we're now able to calculate our theta, and our delta to our desired waypoint from our current location.  
+
 
 Debugging Errors:
 
