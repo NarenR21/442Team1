@@ -42,6 +42,10 @@ This control logic is used for the both steering and accelerator inputs. For the
 The accelarator command is also derived this way however, instead of a theta error the error is found through the distance to the next waypoint. The distance is found through the hypontuse of the delta in x and the delta in y to our desired waypoint from our current waypoint. As this error gets smaller, we slow down. However, in order to aid in turning, we added a filter onto the previously mentioned PD controller. WE remap the PD controller's output through a k / x ^ 2 equation. Where k is a defined constant that is tuneable, and x is the steering error. This allows us to slow down aggresively when not only the distance small, but also when we need to turn a lot. During the straights, the steering error is less then 15, but as we approach the turn, it sharply increases. The shape of the equation, shown below, demonstrates how this higher steering error will signifanctly slow the car. Through this equation, we can slow down into a turn, rotate through it, and then quickly get back on the power into the next straight section. It's significantly helped our times, and some post-race unoffical testing showed that at highspeeds the car actually powerslides through the turn and is accelerating quite close to the apex. 
 This is the esence of our PD controller. The entire loop is run again 10 times a second, allowing us to get very detailed control of the car. 
 
+Graph of the throttle map:
+![image](https://github.com/NarenR21/442Team1/assets/42756261/5da75789-f8e9-4232-b39c-f7dd588460c7)
+
+
 
 Debugging Errors:
 
